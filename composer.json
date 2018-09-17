@@ -11,13 +11,17 @@
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
 	"require": {
-		"php": ">=5.4.8"
+		"guzzlehttp/guzzle": "~6.0",
+        "PHP": "^7.1",
+        "kornrunner/keccak": "~1.0",
+		"phpseclib/phpseclib": "~2.0.11"
 	},
 	"autoload": {
         "psr-4": {
             "Cms\\": "src/cms/",
             "Module\\": "src/cms/module/",
-            "Plugin\\": "src/cms/plugin/"
+            "Plugin\\": "src/cms/plugin/",
+            "Web3\\": "src/Web3"
         },
         "files" : ["src/cms/autoload.php"]
     },
@@ -26,6 +30,6 @@
 	},
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*",
-		"phpunit/phpunit": "4.* || 5.*"
+		"phpunit/phpunit": "~6.0"
 	}
 }
