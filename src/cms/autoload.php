@@ -103,8 +103,8 @@ class BaseController extends CI_Controller {
 	*/
 
 	public function is_login(){
-
-		if($this->session->userdata("is_login") && $this->session->userdata("wallet")){
+		$login = $this->session->userdata("login");
+		if($login && isset($login["is_login"]) && intval($login["is_login"]) > 0){
 			return true;
 		}else{
 			return false;

@@ -6,10 +6,10 @@
 		<div class="col">
 
 			<div class="card card-body" style="border:0px; padding-top: 0;">
-			<h5 style="margin-bottom: 30px;"><i class="ti-unlock"></i> Login with Account</h5>
+			<h5 style="margin-bottom: 30px;"><i class="ti-unlock"></i> Account Info</h5>
 			
+			<?php echo form_open("register.html");?>
 
-			<?php echo form_open("login.html");?>
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Email address</label>
 			    <input type="email" name="email" class="form-control" placeholder="Enter email">
@@ -17,25 +17,21 @@
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" name="password" class="form-control" placeholder="Password">
+			    <input type="password" name="password" class="form-control"  placeholder="Password">
 			  </div>
 
-			  	<div class="form-group">
-				    <label for="exampleInputEmail1">F2A Authy</label>
-				    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter F2A">
-				</div>
+			  	
 
 				<div class="text-left">
-					<button type="submit" class="btn btn-primary col-lg-5">Login</button>
-					<a href="<?php echo store_url("register.html");?>" class="btn btn-outline-info">Register</a>
+					<button type="submit" class="btn btn-primary col-lg-5">Register</button>
+					<a href="<?php echo store_url("login.html");?>" class="btn btn-outline-info">Login</a>
 				</div>
-			</form>
 			</div>
-			
+			</form>
 		</div>
 		<div class="col">
 			
-				<h5><i class="ti-wallet"></i> Login with Roller Wallet</h5>
+				<h5><i class="ti-wallet"></i> Create Roller Wallet</h5>
 				
 				<br>
 				<br>
