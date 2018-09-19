@@ -12,8 +12,10 @@ class Dashboard extends Frontend {
 	}
 
 	public function home(){
-		
-		$this->view('home');
+		$this->db->limit(8);
+		$this->db->order_by("app_sort","ASC");
+		$fapp = $this->db->get("application")->result();
+		$this->view('home',["apps" => $fapp]);
 	}
 
 

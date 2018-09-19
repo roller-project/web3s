@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require BASEPATH.'core/Controller.php';
+require_once BASEPATH.'core/Controller.php';
+require_once __DIR__.'/RestServer.php';
 class BaseController extends CI_Controller {
 	
 	public $layout = "";
@@ -154,10 +155,12 @@ class Backend extends BaseController {
 }
 
 
-class Api extends CI_Controller {
+class ApiClient extends CI_Controller {
 
 }
 
+class ApiServer extends RestServer {
+}
 
 
 

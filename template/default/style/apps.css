@@ -45,3 +45,25 @@ ul{
 header{
 	border-bottom: 1px solid #ddd;
 }
+header .nav-item.dropdown.show{
+	background-color:#075d8e;
+}
+header .nav-item.dropdown.show a{
+	color:#FFF !important;
+}
+header .nav-item.dropdown.show .dropdown-menu a:hover{
+	color: #333 !important;
+}
+
+header .dropdown .dropdown-menu{
+	border-radius:0;
+	-webkit-border-bottom-right-radius: 5px !important;
+-webkit-border-bottom-left-radius: 5px !important;
+-moz-border-radius-bottomright: 5px !important;
+-moz-border-radius-bottomleft: 5px !important;
+border-bottom-right-radius: 5px !important;
+border-bottom-left-radius: 5px !important;
+margin-top: -1px;
+background-color:#075d8e;
+border:0;
+}

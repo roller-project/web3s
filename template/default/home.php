@@ -1,6 +1,28 @@
 <div class="row">
 	<div class="col-lg-6 col-sm-12">
-		<div class="card" style="min-height: 250px;"></div>
+		<div class="card" style="min-height: 250px;">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="d-block w-100" src=".../800x400?auto=yes&bg=777&fg=555&text=First slide" alt="First slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src=".../800x400?auto=yes&bg=666&fg=444&text=Second slide" alt="Second slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src=".../800x400?auto=yes&bg=555&fg=333&text=Third slide" alt="Third slide">
+			    </div>
+			  </div>
+			  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+			  </a>
+			</div>
+		</div>
 	</div>
 	<div class="col-lg-3 col-sm-6">
 		<div class="card" style="min-height: 250px;"></div>
@@ -13,55 +35,7 @@
 <h3><i class="ti-layout-grid2"></i> New Application</h3>
 <hr>
 
-<?php 
-$apps = [];
-$apps[] = [
-	"name" => "Miner Manager",
-	"image" => "",
-	"author" => ""
-];
 
-$apps[] = [
-	"name" => "Auto Pool",
-	"image" => "",
-	"author" => ""
-];
-
-$apps[] = [
-	"name" => "Share Maternode",
-	"image" => "",
-	"author" => ""
-];
-
-
-$apps[] = [
-	"name" => "Smart Token",
-	"image" => "",
-	"author" => ""
-];
-
-
-$apps[] = [
-	"name" => "B2B Proucts",
-	"image" => "",
-	"author" => ""
-];
-
-
-$apps[] = [
-	"name" => "Exchange",
-	"image" => "",
-	"author" => ""
-];
-
-
-$apps[] = [
-	"name" => "Security",
-	"image" => "",
-	"author" => ""
-];
-
-?>
 <div class="row">
 
 	<?php foreach ($apps as $key => $value) { ?>
@@ -69,15 +43,20 @@ $apps[] = [
 	<div class="col-lg-3 col-sm-6 col-md-4 mb-4" >
 		<div class="card">
 			<div class="card-header" style="padding: 0; margin: 0;">
-				<img src="https://5.imimg.com/data5/QN/DS/MY-11609112/electrical-bim-services-cad-outsourcing-500x500.jpg" class="w-100">
+				<img src="<?php echo $value->app_image;?>" style="height:250px;" class="w-100">
 			</div>
 			<div class="card-body">
-				<h6><?php echo $value["name"];?></h6>
-				Author : Roller Platform
+				<h6><i class="ti-layout-grid3"></i> <?php echo $value->app_name;?></h6>
+				<i class="ti-user"></i> Author : <?php echo $value->app_author;?><br>
+				<i class="ti-money"></i> Requiced : <?php echo number_format($value->app_requiced);?> ROL Token
 			</div>
 			<div class="card-footer">
-				<a href="<?php echo store_url("install-1.jav");?>" class="btn btn-sm btn-info col-7">Install</a>
-				<a href="" class="btn btn-sm btn-primary float-right">Online</a>
+				<?php if($value->app_status == 1){ ?>
+					<a href="<?php echo store_url("install-".$value->app_id.".jav");?>" class="btn btn-sm btn-info col-7">Install</a>
+				<?php }else{ ?>
+					<a href="<?php echo store_url("detail-".$value->app_id.".jav");?>" class="btn btn-sm btn-outline-info col-7">Wait Complete</a>
+				<?php } ?>
+				<a href="" class="btn btn-sm btn-primary float-right">Detail</a>
 			</div>
 		</div>
 	</div>
